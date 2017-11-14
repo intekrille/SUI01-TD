@@ -47,10 +47,10 @@ public class EnemySpawner : MonoBehaviour {
         {
             Instantiate(prefab, myvector, rotation);
             spawnrateleft = spawnrate;
-            for (int i = 0; i < length; i++)
+            /*for (int i = 0; i < length; i++)
             {
 
-            }
+            }*/
         }
     }
 
