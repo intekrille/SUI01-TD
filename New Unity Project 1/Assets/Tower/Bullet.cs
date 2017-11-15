@@ -24,7 +24,7 @@ public class Bullet : MonoBehaviour {
         }
         transform.Translate(direction.normalized * directionSpeed, Space.World);
 
-        //while()
+       
 	}
 
     public void BulletHit()
