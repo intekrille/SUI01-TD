@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Bullet : MonoBehaviour {
 
@@ -15,14 +16,18 @@ public class Bullet : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Vector3 direction = target.position - this.transform.localPosition;
-        float directionSpeed = speed * Time.deltaTime;
-
-        if (direction.magnitude <= directionSpeed)
+        while(Tower.ammo > 0)
         {
-            BulletHit();
+            Vector3 direction = target.position - this.transform.localPosition;
+            float directionSpeed = speed * Time.deltaTime;
+
+            if (direction.magnitude <= directionSpeed)
+            {
+                BulletHit();
+            }
+            transform.Translate(direction.normalized * directionSpeed, Space.World);
+            Tower.ammo -= 1;
         }
-        transform.Translate(direction.normalized * directionSpeed, Space.World);
 
         //while()
 	}
@@ -31,6 +36,5 @@ public class Bullet : MonoBehaviour {
     {
         target.GetComponent<Enemy>().TakeHit(damage);
         Destroy(gameObject);
-
     }
 }

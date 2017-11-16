@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour {
     [SerializeField]
+    float waverate = 5f;
+    [SerializeField]
     float spawnrate = 2f;
-    float spawnrateleft = 0;
+    float spawnrateleft = 0f;
     int enemyIndex = 10;
+
+    public int[] waves = { 5, 10, 15, 20, 25 };
 
     [SerializeField]
     GameObject spawnTarget;
@@ -18,6 +22,9 @@ public class EnemySpawner : MonoBehaviour {
     void Start ()
     {
         myvector = new Vector3(spawnTarget.transform.position.x, spawnTarget.transform.position.y, spawnTarget.transform.position.z);
+        //spawnrateleft -= Time.deltaTime;
+        //Update();
+        WaveIndex();
     }
 	
 	// Update is called once per frame
@@ -25,33 +32,26 @@ public class EnemySpawner : MonoBehaviour {
     {
         spawnrateleft -= Time.deltaTime;
 
-        if (spawnrateleft<0.2f)
+        /*if (spawnrateleft<0.2f)
         {
 
             WaveIndex();
-            //Instantiate(prefab, myvector , rotation);
-            
+            //Instantiate(prefab, myvector , rotation);          
             //spawnrateleft = spawnrate;
-        }
-
-        /*for (int i = 0; i < enemyIndex; i++)
-        {
-            Instantiate(prefab, myvector, rotation);
-
         }*/
     }
 
     void WaveIndex()
-    {
-        for (int i = 0; i < enemyIndex; i++)
+    {        
+        for (int i = 0; i < waves.Length; i++)
         {
-            Instantiate(prefab, myvector, rotation);
-            spawnrateleft = spawnrate;
-            /*for (int i = 0; i < length; i++)
-            {
+            spawnrateleft = waverate;
 
-            }*/
+            for (int j = 0; j < waves[i]; j++)
+            {
+                Instantiate(prefab, myvector, rotation);
+                spawnrateleft = spawnrate;
+            }
         }
     }
-
 }

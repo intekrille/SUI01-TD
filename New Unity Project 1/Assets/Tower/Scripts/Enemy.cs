@@ -23,12 +23,14 @@ public class Enemy : MonoBehaviour {
         if (health <= 0f)
         {
             Destroy(gameObject);
+            ScoreManager.money += 10;
         }
     }
 
     public void EnemyReachedTarget()
     {
         Destroy(gameObject);
+        ScoreManager.lives -= 1;
 
     }
 }

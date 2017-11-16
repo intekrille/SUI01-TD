@@ -21,6 +21,7 @@ public class EnemyMovement : MonoBehaviour {
 
         if (gameObject.GetComponent<NavMeshAgent>().remainingDistance < 0.3f && gameObject.GetComponent<NavMeshAgent>().remainingDistance != 0)
         {
+            ScoreManager.lives -= 1;
             Destroy(gameObject);
         }
 	}

@@ -6,7 +6,7 @@ public class Tower : MonoBehaviour {
 
     //TODO: Lägg till ammosystem senare.
     [SerializeField]
-    float ammo;
+    public static int ammo = 11;
     [SerializeField]
     float bulletSpeed = 50f;
     [SerializeField]
@@ -84,5 +84,10 @@ public class Tower : MonoBehaviour {
     {
         Gizmos.color = Color.black;
         Gizmos.DrawWireSphere(transform.position, range);
+    }
+
+    void UpgradeTower()
+    {
+        //if()
     }
 }
