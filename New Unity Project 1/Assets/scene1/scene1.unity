@@ -460,7 +460,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 122513207}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 168, y: 199.5, z: 0}
+  m_LocalPosition: {x: 166, y: 194.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2033699661}
@@ -1429,6 +1429,22 @@ Transform:
   m_Father: {fileID: 1552975295}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &456477528 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1335965783250232, guid: fbde53d9be6d6e04184f7e6068972d11,
+    type: 2}
+  m_PrefabInternal: {fileID: 885265241}
+--- !u!114 &456477529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 456477528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9eb7be626c7c4d84d8b6748e2870621e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &465958742
 GameObject:
   m_ObjectHideFlags: 0
@@ -3768,7 +3784,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1259489043}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 175.5, z: 0}
+  m_LocalPosition: {x: 0, y: 170.5, z: 0}
   m_LocalScale: {x: 1, y: 1.7624851, z: 1}
   m_Children:
   - {fileID: 1353684242}
@@ -3819,7 +3835,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1259489046}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 456477529}
+        m_MethodName: Nextwave
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1259489046
@@ -12327,7 +12354,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2033699660}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -162.7, z: 0}
+  m_LocalPosition: {x: 0, y: -157.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 482202436}
