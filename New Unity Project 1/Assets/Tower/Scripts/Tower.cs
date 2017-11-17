@@ -68,7 +68,7 @@ public class Tower : MonoBehaviour {
     public void Shoot(Enemy target)
     {
         //Skapa en bullet med startposition vid objektet som skapade den.
-        GameObject createBullet = Instantiate(BulletPrefab, this.transform.position, this.transform.rotation);
+        GameObject createBullet = Instantiate(BulletPrefab, transform.position, transform.rotation);
 
         //Hittar komponenten med namn Bullet i objektet (bulletscriptet)
         Bullet bullet = createBullet.GetComponent<Bullet>();
