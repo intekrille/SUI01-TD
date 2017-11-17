@@ -17,7 +17,7 @@ public class EnemyMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        Debug.Log(gameObject.GetComponent<NavMeshAgent>().remainingDistance);
+        //Debug.Log(gameObject.GetComponent<NavMeshAgent>().remainingDistance);
 
         if (gameObject.GetComponent<NavMeshAgent>().remainingDistance < 0.3f && gameObject.GetComponent<NavMeshAgent>().remainingDistance != 0)
         {
