@@ -32,10 +32,14 @@ public class ScoreManager : MonoBehaviour
         // FIXME: This doesn't actually need to update the text every frame.
         moneyText.text = "Money: $" + money.ToString();
         livesText.text = "Lives: " + lives.ToString();
+    }
 
-
-
-
+    void RestartGameButton()
+    {
+        if(GUI.Button (new Rect(10, 10, 100, 20), "Try Again!"))
+        {
+            Application.LoadLevel();
+        }
     }
 
 }

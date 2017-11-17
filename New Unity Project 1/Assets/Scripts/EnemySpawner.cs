@@ -24,7 +24,7 @@ public class EnemySpawner : MonoBehaviour {
         myvector = new Vector3(spawnTarget.transform.position.x, spawnTarget.transform.position.y, spawnTarget.transform.position.z);
         //spawnrateleft -= Time.deltaTime;
         //Update();
-        WaveIndex();
+        //WaveIndex();
     }
 	
 	// Update is called once per frame
@@ -32,26 +32,32 @@ public class EnemySpawner : MonoBehaviour {
     {
         spawnrateleft -= Time.deltaTime;
 
-        /*if (spawnrateleft<0.2f)
+        if (spawnrateleft<0.2f)
         {
 
-            WaveIndex();
-            //Instantiate(prefab, myvector , rotation);          
-            //spawnrateleft = spawnrate;
-        }*/
-    }
-
-    void WaveIndex()
-    {        
-        for (int i = 0; i < waves.Length; i++)
-        {
-            spawnrateleft = waverate;
-
-            for (int j = 0; j < waves[i]; j++)
-            {
-                Instantiate(prefab, myvector, rotation);
-                spawnrateleft = spawnrate;
-            }
+            //WaveIndex();
+            Instantiate(prefab, myvector , rotation);          
+            spawnrateleft = spawnrate;
         }
     }
+
+    /*void WaveIndex()
+    {
+        spawnrateleft = waverate;
+        if(spawnrateleft < 0.2f)
+        {
+            for (int i = 0; i < waves.Length; i++)
+            {
+                spawnrateleft = spawnrate;
+                if (spawnrateleft < 0.2f)
+                {
+                    for (int j = 0; j < waves[i]; j++)
+                    {
+                        Instantiate(prefab, myvector, rotation);
+                        spawnrateleft = spawnrate;
+                    }
+                }
+            }
+        }
+    }*/
 }

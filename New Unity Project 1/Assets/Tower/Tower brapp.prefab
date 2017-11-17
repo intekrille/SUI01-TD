@@ -141,8 +141,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1405973959814020}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 115.98, y: 2.25, z: 104.51}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 115.98, y: 3.5, z: 104.51}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4526540944129754}
   m_Father: {fileID: 0}
@@ -271,10 +271,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5345f67b27680524aae5e79e0c210ddd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammo: 0
   bulletSpeed: 25
   damage: 1
   range: 10
-  shootCooldown: 1
+  shootCooldown: 0.5
   BulletPrefab: {fileID: 1082467237308524, guid: 284dcc2b8560c104dbd5571b369e0a88,
     type: 2}

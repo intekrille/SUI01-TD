@@ -16,20 +16,16 @@ public class Bullet : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        while(Tower.ammo > 0)
-        {
+
             Vector3 direction = target.position - this.transform.localPosition;
             float directionSpeed = speed * Time.deltaTime;
+        transform.Translate(direction.normalized * directionSpeed, Space.World);
 
             if (direction.magnitude <= directionSpeed)
             {
                 BulletHit();
+                Tower.ammo -= 1;
             }
-            transform.Translate(direction.normalized * directionSpeed, Space.World);
-            Tower.ammo -= 1;
-        }
-
-        //while()
 	}
 
     public void BulletHit()
