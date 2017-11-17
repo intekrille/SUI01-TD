@@ -6,12 +6,14 @@ using UnityEngine.AI;
 public class EnemyMovement : MonoBehaviour {
     [SerializeField]
     Transform target;
+    Gamemaster master;
 
 	// Use this for initialization
 	void Start ()
     {
         NavMeshAgent agent = GetComponent<NavMeshAgent>();
         agent.destination = target.position;
+        master = GameObject.FindGameObjectWithTag("Gamemaster").GetComponent<Gamemaster>();
 	}
 	
 	// Update is called once per frame
@@ -21,15 +23,9 @@ public class EnemyMovement : MonoBehaviour {
 
         if (gameObject.GetComponent<NavMeshAgent>().remainingDistance < 0.3f && gameObject.GetComponent<NavMeshAgent>().remainingDistance != 0)
         {
-            ScoreManager.lives -= 1;
+            master.Takedamage();
             Destroy(gameObject);
         }
 	}
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag=="shot")
-        {
-            Destroy(gameObject);
-        }
-    }
+
 }

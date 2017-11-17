@@ -52,6 +52,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -67,6 +68,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -106,5 +108,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnrate: 1
+  wavespawnrate: 50
+  wavecountdown: 0
+  waveCountdownText: {fileID: 0}
   target: {fileID: 1078623666271342}
-  prefab: {fileID: 1221245483005338, guid: 192f5d6e528b4674a91311ea59ff8cc4, type: 2}
+  prefab: {fileID: 1011121377031918, guid: 10ed27a1b6396e34a8395d9033334100, type: 2}
+  waves: 030000000500000007000000090000000b0000000d0000000f000000

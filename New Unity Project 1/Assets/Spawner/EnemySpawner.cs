@@ -1,57 +1,74 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using UnityEngine.UI;
 using UnityEngine;
 
-public class EnemySpawner : MonoBehaviour {
-    [SerializeField]
-    float waverate = 5f;
+public class EnemySpawner : MonoBehaviour
+{
     [SerializeField]
     float spawnrate = 2f;
-    float spawnrateleft = 0f;
-    int enemyIndex = 10;
-
-    public int[] waves = { 5, 10, 15, 20, 25 };
-
+    float spawnrateleft = 0;
     [SerializeField]
-    GameObject spawnTarget;
+    float wavespawnrate = 50f;
+    public float wavecountdown;
+    bool spawneractive = true;
+    bool wavecountdownrunning = false;
+    int enemyindex = 0;
+    int waveindex = 0;
+    public Text waveCountdownText;
+    [SerializeField]
+    GameObject target;
     [SerializeField]
     GameObject prefab;
     Quaternion rotation;
     Vector3 myvector;
+    [SerializeField]
+    int[] waves = new int[] { 3, 5, 7, 9, 11, 13, 15 };
     // Use this for initialization
-    void Start ()
+    void Start()
     {
-        myvector = new Vector3(spawnTarget.transform.position.x, spawnTarget.transform.position.y, spawnTarget.transform.position.z);
-        //spawnrateleft -= Time.deltaTime;
-        //Update();
-        WaveIndex();
-    }
-	
-	// Update is called once per frame
-	void Update ()
-    {
-        spawnrateleft -= Time.deltaTime;
-
-        /*if (spawnrateleft<0.2f)
-        {
-
-            WaveIndex();
-            //Instantiate(prefab, myvector , rotation);          
-            //spawnrateleft = spawnrate;
-        }*/
+        myvector = new Vector3(target.transform.position.x, target.transform.position.y, target.transform.position.z);
+        wavecountdown = wavespawnrate;
     }
 
-    void WaveIndex()
-    {        
-        for (int i = 0; i < waves.Length; i++)
-        {
-            spawnrateleft = waverate;
+    // Update is called once per frame
+    void Update()
+    {
 
-            for (int j = 0; j < waves[i]; j++)
+        if (spawneractive)
+        {
+
+            spawnrateleft -= Time.deltaTime;
+            if (spawnrateleft < 0.3f)
             {
+
                 Instantiate(prefab, myvector, rotation);
+
                 spawnrateleft = spawnrate;
+                enemyindex++;
+            }
+            if (enemyindex == waves[waveindex])
+            {
+                spawneractive = false;
+                waveindex++;
+                enemyindex = 0;
+                wavecountdownrunning = true;
+            }
+
+
+
+        }
+        if (wavecountdownrunning)
+        {
+
+
+            wavecountdown -= Time.deltaTime;
+         //   waveCountdownText.text = "Call next wave: " + Mathf.Floor(wavecountdown).ToString();
+            if (wavecountdown < 0.3f)
+            {
+                spawneractive = true;
+                wavecountdown = wavespawnrate;
+                wavecountdownrunning = false;
             }
         }
     }
+
 }
