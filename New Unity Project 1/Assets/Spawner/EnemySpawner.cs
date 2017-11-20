@@ -61,7 +61,7 @@ public class EnemySpawner : MonoBehaviour
 
 
             wavecountdown -= Time.deltaTime;
-         //   waveCountdownText.text = "Call next wave: " + Mathf.Floor(wavecountdown).ToString();
+            waveCountdownText.text = "Call next wave: " + Mathf.Floor(wavecountdown).ToString();
             if (wavecountdown < 0.3f)
             {
                 spawneractive = true;
