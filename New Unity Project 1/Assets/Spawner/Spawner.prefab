@@ -110,8 +110,7 @@ MonoBehaviour:
   spawnrate: 1
   wavespawnrate: 10
   wavecountdown: 0
-  waveCountdownText: {fileID: 114830813317107036, guid: 79b5461716af3fe48bd529df287aad86,
-    type: 2}
+  waveCountdownText: {fileID: 0}
   target: {fileID: 1078623666271342}
   prefab: {fileID: 1011121377031918, guid: 10ed27a1b6396e34a8395d9033334100, type: 2}
   waves: 030000000500000007000000090000000b0000000d0000000f000000
